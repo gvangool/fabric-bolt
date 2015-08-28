@@ -150,6 +150,10 @@ class Stage(TrackingFields):
         # Return the updated configurations
         return project_configurations_dictionary
 
+    @property
+    def host_count(self):
+        return self.hosts.count()
+
 
 class Configuration(TrackingFields):
     """Configurations can be on a project or a specific stage.
