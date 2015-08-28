@@ -118,7 +118,7 @@ class StageTable(PaginateTable):
     )
 
     name = tables.LinkColumn('projects_stage_view', args=[tables.A('project_id'), tables.A('pk')], verbose_name='Name')
-    hosts = tables.Column(accessor='host_count', verbose_name='# Hosts')
+    hosts = tables.Column(accessor='host_count', verbose_name='# Hosts', orderable=False)
     deployments = tables.Column(accessor='deployment_count', verbose_name='# Deployments', order_by='deployment_count')
 
     class Meta:
